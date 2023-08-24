@@ -35,3 +35,32 @@ get("/dice/2/10") do
 
   <p> #{outcome} </p> " 
 end 
+
+get("/dice/1/20") do 
+  random_number_generator = rand(1..20)
+  sum = random_number_generator
+
+  outcome = "You rolled a #{random_number_generator} for a total of #{sum}. "
+
+  "<h1> One 20-sided dice </h1> 
+
+  <p> #{outcome} </p> " 
+end 
+
+
+get("/dice/5/4") do 
+
+dice1 = rand(1..4)
+dice2 = rand(1..4)
+dice3 = rand(1..4)
+dice4 = rand(1..4)
+dice5 = rand(1..4)
+
+sum = dice1 + dice2 + dice3 + dice4 + dice5
+
+outcome = "You rolled a #{dice1}, a #{dice2}, a #{dice3}, a #{dice4}, and last one rolled was #{dice5} for a total of #{sum}."
+
+" <h1> Five 4-sided dice </h1> 
+
+<p> #{outcome} </p> "
+end 
