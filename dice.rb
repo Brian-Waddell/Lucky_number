@@ -2,7 +2,16 @@ require "sinatra"
 require "sinatra/reloader"
 
 get("/") do
-  "Hello World"
+ 
+  "
+  <h1> Dice Roll </h1> 
+  <ul> 
+  <li><a href=\"/dice/2/6\"> Roll a two 6-sided dice</a></li>
+  <li><a href=\"/dice/2/10\"> Roll a two 6-sided dice</a></li>
+  <li><a href=\"/dice/1/20\"> Roll a two 6-sided dice</a></li>
+  <li><a href=\"/dice/5/4\"> Roll a two 6-sided dice</a></li>
+  </ul> 
+  " 
 end
 
 get("/zebra") do 
