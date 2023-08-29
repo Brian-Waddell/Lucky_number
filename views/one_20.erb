@@ -5,8 +5,22 @@
 </head>
 
 <body>
-<h1> One 20-sided dice </h1> 
+<h1> One die 20 sided </h1>
+<ul>
+<% @array.each do |a_roll| %>
+     <li> 
+      <%= a_roll%>
+      </li>
+      <% end %>
+</ul> 
 
+<!--<h1> One 20-sided dice </h1> 
+<% if @random_number_generator == 1%>
+      <p style="color:red"> <%= @outcome%></p>
+<%elsif @random_number_generator == 7%>
+      <p style="color:green"> <%= @outcome %></p>
+<% else %>
   <p> <%= @outcome%> </p> 
+  <% end %> --> 
 </body>
 </html>

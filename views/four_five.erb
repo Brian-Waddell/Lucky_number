@@ -6,8 +6,15 @@
 <body>
 
 <h1> 5 four-sided dice </h1> 
-
-<p><%= @outcome%> </p>
+<ul>
+<% @rolls.each do |a_roll| %>
+     <li> 
+      <%= a_roll%>
+      </li>
+      <% end %>
+</ul> 
+ 
+<!--<p><%= @outcome%> </p> --> 
 
 </body>
 </html>

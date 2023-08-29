@@ -8,6 +8,12 @@
 
 <h1> Two Ten-sided dice </h1>
 
-<p> <%= @outcome%> </p>
+<ul>
+  <% @array.each do |a_roll|%>
+    <li> 
+      <%= a_roll%>
+      </li>
+      <% end %>
+</ul> 
 </body>
 </html>
