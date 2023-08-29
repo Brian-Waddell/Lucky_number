@@ -2,16 +2,7 @@ require "sinatra"
 require "sinatra/reloader"
 
 get("/") do
- 
-  "
-  <h1> Dice Roll </h1> 
-  <ul> 
-  <li><a href=\"/dice/2/6\"> Roll a two 6-sided dice</a></li>
-  <li><a href=\"/dice/2/10\"> Roll a two 6-sided dice</a></li>
-  <li><a href=\"/dice/1/20\"> Roll a two 6-sided dice</a></li>
-  <li><a href=\"/dice/5/4\"> Roll a two 6-sided dice</a></li>
-  </ul> 
-  " 
+  erb(:elephant)
 end
 
 get("/zebra") do 
@@ -27,10 +18,9 @@ get("/dice/2/6") do
   second_die = rand(1..6)
   sum = first_die + second_die
 
-  outcome = "You rolled a #{first_die} and a #{second_die} for a total of #{sum}."
-  
-  "<h1> 2d6 </h1>
-  <p> #{outcome} </p? "
+  @outcome = "You rolled a #{first_die} and a #{second_die} for a total of #{sum}."
+
+  erb(:two_six)
 end 
 
 get("/dice/2/10") do 
@@ -38,22 +28,18 @@ get("/dice/2/10") do
   second_die = rand(1..10)
   sum = first_die + second_die
 
-  outcome = "You rolled a #{first_die} and a #{second_die} for a total of #{sum}. "
+  @outcome = "You rolled a #{first_die} and a #{second_die} for a total of #{sum}. "
 
-  "<h1> Two 10-sided dice </h1> 
-
-  <p> #{outcome} </p> " 
+  erb(:two_ten)
 end 
 
 get("/dice/1/20") do 
   random_number_generator = rand(1..20)
   sum = random_number_generator
 
-  outcome = "You rolled a #{random_number_generator} for a total of #{sum}. "
+  @outcome = "You rolled a #{random_number_generator} for a total of #{sum}. "
 
-  "<h1> One 20-sided dice </h1> 
-
-  <p> #{outcome} </p> " 
+  erb(:one_20) 
 end 
 
 
@@ -67,9 +53,7 @@ dice5 = rand(1..4)
 
 sum = dice1 + dice2 + dice3 + dice4 + dice5
 
-outcome = "You rolled a #{dice1}, a #{dice2}, a #{dice3}, a #{dice4}, and last one rolled was #{dice5} for a total of #{sum}."
+@outcome = "You rolled a #{dice1}, a #{dice2}, a #{dice3}, a #{dice4}, and last one rolled was #{dice5} for a total of #{sum}."
 
-" <h1> Five 4-sided dice </h1> 
-
-<p> #{outcome} </p> "
+erb(:four_five)
 end 
